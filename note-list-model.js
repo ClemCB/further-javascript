@@ -1,14 +1,17 @@
 (function(exports) {
-  var NoteList = function(note) {
+  var NoteList = function() {
     this.storedNotes = [];
-    this.storedNotes.push(note);
   }
 
   NoteList.prototype.viewNotes = function() {
-    for(var i = 0; i < this.storedNotes.length; i++) {
-      return this.storedNotes[i].text;
+    for (var i = 0; i < this.storedNotes.length; i++) {
+      console.log(this.storedNotes[i].text)
     };
   }
+
+  NoteList.prototype.createNote = function(text) {
+    this.storedNotes.push(new Note(text));
+  };
 
   exports.NoteList = NoteList;
 
